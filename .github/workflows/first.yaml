@@ -15,6 +15,7 @@ jobs:
                 echo "sha=$SHORT_SHA" >> $GITHUB_OUTPUT
                 echo sha=[$SHORT_SHA]
                 VERSION=$(head -n 1 VERSION)
+                VERSION=`echo ${VERSION} | sed -e "s/[\r\n]\+//g"`
                 echo "version=$VERSION" >> $GITHUB_OUTPUT
                 echo version=[$VERSION-$SHORT_SHA]
       
